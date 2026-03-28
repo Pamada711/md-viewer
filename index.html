@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MD Viewer</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+  <body>
+    <div id="app">
+
+      <!-- TOC sidebar (hover to show) -->
+      <div id="toc-wrapper">
+        <aside id="toc-sidebar">
+          <div id="toc-title">目次</div>
+          <ul id="toc-list"></ul>
+        </aside>
+      </div>
+
+      <!-- Main content -->
+      <div id="content-area">
+        <div id="drop-overlay">MD ファイルをドロップ</div>
+        <article id="markdown-body"></article>
+      </div>
+
+      <!-- Search bar (Ctrl+F) -->
+      <div id="search-bar" class="hidden">
+        <input type="text" id="search-input" placeholder="検索..." autocomplete="off" />
+        <span id="search-count"></span>
+        <button id="search-prev" title="前へ (Shift+Enter)">&#8593;</button>
+        <button id="search-next" title="次へ (Enter)">&#8595;</button>
+        <button id="search-close" title="閉じる (Esc)">&#x2715;</button>
+      </div>
+
+      <!-- Status bar -->
+      <footer id="status-bar">
+        <span id="status-filename">ファイルを開いていません</span>
+        <span id="status-lines"></span>
+        <span id="status-modified"></span>
+        <span class="spacer"></span>
+        <button id="btn-always-on-top" title="最前面固定">固定</button>
+        <button id="btn-theme" title="テーマ切替">Auto</button>
+      </footer>
+
+    </div>
+  </body>
+</html>
